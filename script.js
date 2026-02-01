@@ -239,4 +239,24 @@ fetch('news.json')
     });
   });
 
+function openNews(news){
+  const overlay = document.getElementById("overlay");
+  const overlayBox = document.getElementById("overlay-box");
+
+  overlayBox.innerHTML = `
+    <h2>${news.title}</h2>
+    <p><strong>${news.date}</strong></p>
+    ${news.img ? `<img src="${news.img}" style="width:100%;margin:15px 0;border-radius:10px;">` : ""}
+    <p>${news.full || news.content}</p>
+    <button class="btn-close">Закрыть</button>
+  `;
+
+  overlay.classList.add('active');
+  overlayBox.classList.add('active');
+
+  overlayBox.querySelector('.btn-close').onclick = () => {
+    overlay.classList.remove('active');
+    overlayBox.classList.remove('active');
+  };
+}
 
