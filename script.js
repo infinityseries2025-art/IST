@@ -217,15 +217,26 @@ fetch('news.json')
   .then(res => res.json())
   .then(data => {
     const grid = document.getElementById("tournament-grid");
+    grid.innerHTML = "";
+
     data.forEach(news => {
       const card = document.createElement('div');
       card.classList.add('tournament-card');
+
       card.innerHTML = `
         <div class="tournament-title">${news.title}</div>
         <div class="tournament-date">${news.date}</div>
         <div class="tournament-desc">${news.content}</div>
-        <img src="${news.img}" alt="${news.title}" style="width:100%;margin-top:10px;border-radius:8px;">
+        ${news.img ? `<img src="${news.img}" style="width:100%;margin-top:10px;border-radius:8px;">` : ""}
+        <button class="btn-more">Подробнее</button>
       `;
+
+      card.querySelector('.btn-more').addEventListener('click', () => {
+        openNews(news);
+      });
+
       grid.appendChild(card);
     });
   });
+
+
