@@ -211,3 +211,21 @@ if (document.readyState === 'loading') {
 } else {
   loadNav();
 }
+
+// Подгрузкание новостей о турнирах
+fetch('news.json')
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById("tournament-grid");
+    data.forEach(news => {
+      const card = document.createElement('div');
+      card.classList.add('tournament-card');
+      card.innerHTML = `
+        <div class="tournament-title">${news.title}</div>
+        <div class="tournament-date">${news.date}</div>
+        <div class="tournament-desc">${news.content}</div>
+        <img src="${news.img}" alt="${news.title}" style="width:100%;margin-top:10px;border-radius:8px;">
+      `;
+      grid.appendChild(card);
+    });
+  });
