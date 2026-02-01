@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infinity Series</title>
+
+    <!-- Шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <!-- Canvas для частиц на фоне -->
+  <canvas id="net"></canvas>
+
+  <!-- Header / Лого + Навигация -->
+  <header class="header">
+  <div class="logo" onclick="window.location.href='index.html'">
+    <span class="infinity">INFINITY</span><span class="series">SERIES</span>
+  </div>
+
+  <!-- Навигация подгружается сюда -->
+  <div id="nav-placeholder"></div>
+</header>
+
+<script src="script.js"></script>
+
+  <!-- Команда -->
+  <div class="team-members">
+  <div class="team-member" onclick="openPlayer('Hez1')">
+  <div class="photo-wrap">
+    <img src="images.png" class="team-photo">
+  </div>
+  <h3 class="team-name">Hez1</h3>
+  <p class="team-role">IGL</p>
+</div>
+  <div class="team-member" onclick="openPlayer('Exomi')">
+  <div class="photo-wrap">
+    <img src="images.png" class="team-photo">
+  </div>
+  <h3 class="team-name">Exomi</h3>
+  <p class="team-role">Entry</p>
+</div>
+  <div class="team-member" onclick="openPlayer('dizerix')">
+  <div class="photo-wrap">
+    <img src="images.png" class="team-photo">
+  </div>
+  <h3 class="team-name">dizerix</h3>
+  <p class="team-role">AWPer</p>
+</div>
+  <div class="team-member" onclick="openPlayer('Se1n')">
+  <div class="photo-wrap">
+    <img src="images.png" class="team-photo">
+  </div>
+  <h3 class="team-name">Se1n</h3>
+  <p class="team-role">Support</p>
+</div>
+  <div class="team-member" onclick="openPlayer('Cheliks')">
+  <div class="photo-wrap">
+    <img src="images.png" class="team-photo">
+  </div>
+  <h3 class="team-name">Cheliks</h3>
+  <p class="team-role">Lurker</p>
+</div>
+</div>
+    
+    
+</body>
+</html>
